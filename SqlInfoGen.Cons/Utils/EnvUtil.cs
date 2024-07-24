@@ -11,5 +11,9 @@ public static class EnvUtil
     {
         return $"{Environment.CurrentDirectory}{(existsEndSeparator ? Path.DirectorySeparatorChar : "")}";
     }
-    
+
+    public static string GetCombinePath(params string[] paths)
+    {
+        return Path.Combine(paths);
+    } 
 }

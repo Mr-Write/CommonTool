@@ -5,5 +5,13 @@
   },
   "prod": {
     "connectionStrings": "server=192.168.0.203;uid=xietian;pwd=Sangxin_59;database=newjpconfigdb;pooling=true;AllowLoadLocalInfile=true;"
-  }
+  },
+  "readDbConfigPaths": [
+    {
+      "DirLevels": [
+        "DbConfig"
+      ],
+      "FileName": "business_db.json"
+    }
+  ]
 }

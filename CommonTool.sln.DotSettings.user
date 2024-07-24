@@ -1,9 +1,24 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=21d8d1fd_002D38c5_002D43b3_002D9cf0_002D161bee0a64c7/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TestProgramPath" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=21d8d1fd_002D38c5_002D43b3_002D9cf0_002D161bee0a64c7/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestProgramPath" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::9732C3D7-E0F6-4927-9690-DCBE11039906::net8.0::SqlInfoGen.Cons.Test.SimpleTest.TestProgramPath2&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::9732C3D7-E0F6-4927-9690-DCBE11039906::net8.0::SqlInfoGen.Cons.Test.SimpleTest.TestProgramPath1&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::9732C3D7-E0F6-4927-9690-DCBE11039906::net8.0::SqlInfoGen.Cons.Test.SimpleTest.TestDbConn&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::9732C3D7-E0F6-4927-9690-DCBE11039906::net8.0::SqlInfoGen.Cons.Test.SimpleTest.TestReadStaticDir&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::9732C3D7-E0F6-4927-9690-DCBE11039906::net8.0::SqlInfoGen.Cons.Test.SimpleTest.TestReadJsonObj&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6ffe1b44_002Deb86_002D41af_002D9b3e_002D6ab929ce6e82/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestDbConn" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::9732C3D7-E0F6-4927-9690-DCBE11039906::net8.0::SqlInfoGen.Cons.Test.SimpleTest.TestDbConn&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::9732C3D7-E0F6-4927-9690-DCBE11039906::net8.0::SqlInfoGen.Cons.Test.SimpleTest.TestReadJsonObj&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=750e1843_002Dcaf6_002D4fd7_002Db4d4_002D12fc06d4c555/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TestDbConn #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::9732C3D7-E0F6-4927-9690-DCBE11039906::net8.0::SqlInfoGen.Cons.Test.SimpleTest.TestDbConn&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::9732C3D7-E0F6-4927-9690-DCBE11039906::net8.0::SqlInfoGen.Cons.Test.SimpleTest.TestReadJsonObj&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::9732C3D7-E0F6-4927-9690-DCBE11039906::net8.0::SqlInfoGen.Cons.Test.SimpleTest.TestGenBeans&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::9732C3D7-E0F6-4927-9690-DCBE11039906::net8.0::SqlInfoGen.Cons.Test.GenDataFileTest.TestGenDataFile&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

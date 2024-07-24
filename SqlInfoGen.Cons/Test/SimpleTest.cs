@@ -1,4 +1,6 @@
-﻿using NUnit.Framework;
+﻿using System.Text.Json;
+using NUnit.Framework;
+using SqlInfoGen.Cons.Utils;
 
 namespace SqlInfoGen.Cons.Test;
 
@@ -34,6 +36,28 @@ public class SimpleTest : DbTest
         catch (Exception ex)
         {
             Console.WriteLine("读取文件时出错: " + ex.Message);
+        }
+    }
+
+    [Test]
+    public void TestReadJsonObj()
+    {
+        var dbConfigPathList = ConfigUtil.GetDbConfigPathList();
+        foreach (var readDbConfigPath in dbConfigPathList)
+        {
+            Console.WriteLine(readDbConfigPath.GetFilePath());
+        }
+    }
+
+    [Test]
+    public void TestGenBeans()
+    {
+        var dbConfigPathList = ConfigUtil.GetDbConfigPathList();
+        foreach (var readDbConfigPath in dbConfigPathList)
+        {
+            var beans = JsonToObjUtil.GetBeanByDbConfigFile(readDbConfigPath.GetFilePath());
+            // 打印 beans 信息
+            Console.WriteLine(JsonSerializer.Serialize(beans));
         }
     }
 }

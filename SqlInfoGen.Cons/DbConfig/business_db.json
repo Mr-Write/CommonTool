@@ -1,7 +1,7 @@
 [
   {
     "Table": "universitybaseinfo",
-    "AllFields": false,
+    "NeedAllFields": false,
     "Fields": [
       "Id",
       "Name",
@@ -16,6 +16,11 @@
     "SelectConditions": [
       "TaskId = 11"
     ],
-    "OutputDir": "default"
+    "OrderByConditions": [
+      "Id asc"
+    ],
+    "OutputDir": "default",
+    "OutputFileName": "default",
+    "OutputFileSuffix": "md"
   }
 ]
