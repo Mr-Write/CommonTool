@@ -1,0 +1,21 @@
+[
+  {
+    "Table": "universitybaseinfo",
+    "AllFields": false,
+    "Fields": [
+      "Id",
+      "Name",
+      "OwnerCode",
+      "IsIncludeFeedback",
+      "IsExpert",
+      "ShareSetting",
+      "CourseType",
+      "TaskId"
+    ],
+    "NeedComment": true,
+    "SelectConditions": [
+      "TaskId = 11"
+    ],
+    "OutputDir": "default"
+  }
+]

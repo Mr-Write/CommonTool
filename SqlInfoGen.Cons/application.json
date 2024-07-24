@@ -1,0 +1,9 @@
+{
+  "env": "prod",
+  "dev": {
+    "connectionStrings": "server=127.0.0.1;uid=root;pwd=123456;database=newjpconfigdb;pooling=true;AllowLoadLocalInfile=true;"
+  },
+  "prod": {
+    "connectionStrings": "server=192.168.0.203;uid=xietian;pwd=Sangxin_59;database=newjpconfigdb;pooling=true;AllowLoadLocalInfile=true;"
+  }
+}
