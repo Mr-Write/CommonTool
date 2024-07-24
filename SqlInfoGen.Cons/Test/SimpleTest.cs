@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 using NUnit.Framework;
+using SqlInfoGen.Cons.Helpers;
 using SqlInfoGen.Cons.Utils;
 
 namespace SqlInfoGen.Cons.Test;
@@ -58,6 +59,16 @@ public class SimpleTest : DbTest
             var beans = JsonToObjUtil.GetBeanByDbConfigFile(readDbConfigPath.GetFilePath());
             // 打印 beans 信息
             Console.WriteLine(JsonSerializer.Serialize(beans));
+        }
+    }
+
+    [Test]
+    public void TestGetTableSchema()
+    {
+        var tableFieldInfos = DbHelper.GetTableSchema("universitybaseinfo");
+        foreach (var tableFieldInfo in tableFieldInfos.Values)
+        {
+            Console.WriteLine($"{tableFieldInfo.Field} {tableFieldInfo.Type} {tableFieldInfo.Comment}");
         }
     }
 }

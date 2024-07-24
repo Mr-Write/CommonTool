@@ -3,14 +3,14 @@
     "Table": "universitybaseinfo",
     "NeedAllFields": false,
     "Fields": [
-      "Id",
-      "Name",
-      "OwnerCode",
-      "IsIncludeFeedback",
-      "IsExpert",
-      "ShareSetting",
-      "CourseType",
-      "TaskId"
+      {"Name": "Id", "Alias": ""},
+      {"Name": "Name", "Alias": ""},
+      {"Name": "OwnerCode", "Alias": ""},
+      {"Name": "IsIncludeFeedback", "Alias": ""},
+      {"Name": "IsExpert", "Alias": ""},
+      {"Name": "ShareSetting", "Alias": ""},
+      {"Name": "CourseType", "Alias": ""},
+      {"Name": "TaskId", "Alias": ""}
     ],
     "NeedComment": true,
     "SelectConditions": [

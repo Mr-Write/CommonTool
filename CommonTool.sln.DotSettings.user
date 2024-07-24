@@ -8,6 +8,11 @@
     &lt;TestId&gt;NUnit3x::9732C3D7-E0F6-4927-9690-DCBE11039906::net8.0::SqlInfoGen.Cons.Test.SimpleTest.TestReadJsonObj&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=33c83c6c_002D866d_002D45d4_002D925b_002D920119f0a1e4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestGetTableSchema" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::9732C3D7-E0F6-4927-9690-DCBE11039906::net8.0::SqlInfoGen.Cons.Test.SimpleTest.TestGetTableSchema&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6ffe1b44_002Deb86_002D41af_002D9b3e_002D6ab929ce6e82/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestDbConn" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::9732C3D7-E0F6-4927-9690-DCBE11039906::net8.0::SqlInfoGen.Cons.Test.SimpleTest.TestDbConn&lt;/TestId&gt;&#xD;
@@ -20,5 +25,6 @@
     &lt;TestId&gt;NUnit3x::9732C3D7-E0F6-4927-9690-DCBE11039906::net8.0::SqlInfoGen.Cons.Test.SimpleTest.TestReadJsonObj&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::9732C3D7-E0F6-4927-9690-DCBE11039906::net8.0::SqlInfoGen.Cons.Test.SimpleTest.TestGenBeans&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::9732C3D7-E0F6-4927-9690-DCBE11039906::net8.0::SqlInfoGen.Cons.Test.GenDataFileTest.TestGenDataFile&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::9732C3D7-E0F6-4927-9690-DCBE11039906::net8.0::SqlInfoGen.Cons.Test.SimpleTest.TestGetTableSchema&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
