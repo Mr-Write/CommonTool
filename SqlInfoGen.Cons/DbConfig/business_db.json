@@ -1,26 +1,27 @@
 [
   {
-    "Table": "universitybaseinfo",
+    "Table": "expertquestionnaire",
     "NeedAllFields": false,
     "Fields": [
-      {"Name": "Id", "Alias": ""},
+      {"Name": "Id", "Alias": "主键"},
       {"Name": "Name", "Alias": ""},
       {"Name": "OwnerCode", "Alias": ""},
       {"Name": "IsIncludeFeedback", "Alias": ""},
-      {"Name": "IsExpert", "Alias": ""},
+      {"Name": "IsExpert", "Alias": "是否为督导"},
       {"Name": "ShareSetting", "Alias": ""},
       {"Name": "CourseType", "Alias": ""},
-      {"Name": "TaskId", "Alias": ""}
+      {"Name": "TaskId", "Alias": "任务Id"}
     ],
-    "NeedComment": true,
+    "NeedTableSchema": true,
     "SelectConditions": [
       "TaskId = 11"
     ],
     "OrderByConditions": [
       "Id asc"
     ],
-    "OutputDir": "default",
-    "OutputFileName": "default",
-    "OutputFileSuffix": "md"
+    "Limit": {
+      "Offset": 0,
+      "Count": 10
+    }
   }
 ]

@@ -5,10 +5,10 @@ namespace SqlInfoGen.Cons.Utils;
 
 public static class JsonToObjUtil
 {
-    public static List<DbConfigBean> GetBeanByDbConfigFile(string filePath)
+    public static List<TableConfigBean> GetTableConfigBeanList(string filePath)
     {
         string jsonContent = File.ReadAllText(filePath);
-        List<DbConfigBean> beans = JsonSerializer.Deserialize<List<DbConfigBean>>(jsonContent)!;
+        List<TableConfigBean> beans = JsonSerializer.Deserialize<List<TableConfigBean>>(jsonContent)!;
         return beans;
     }
 }

@@ -41,28 +41,6 @@ public class SimpleTest : DbTest
     }
 
     [Test]
-    public void TestReadJsonObj()
-    {
-        var dbConfigPathList = ConfigUtil.GetDbConfigPathList();
-        foreach (var readDbConfigPath in dbConfigPathList)
-        {
-            Console.WriteLine(readDbConfigPath.GetFilePath());
-        }
-    }
-
-    [Test]
-    public void TestGenBeans()
-    {
-        var dbConfigPathList = ConfigUtil.GetDbConfigPathList();
-        foreach (var readDbConfigPath in dbConfigPathList)
-        {
-            var beans = JsonToObjUtil.GetBeanByDbConfigFile(readDbConfigPath.GetFilePath());
-            // 打印 beans 信息
-            Console.WriteLine(JsonSerializer.Serialize(beans));
-        }
-    }
-
-    [Test]
     public void TestGetTableSchema()
     {
         var tableFieldInfos = DbHelper.GetTableSchema("universitybaseinfo");

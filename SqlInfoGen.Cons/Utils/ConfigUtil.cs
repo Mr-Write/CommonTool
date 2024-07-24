@@ -22,8 +22,8 @@ public static class ConfigUtil
         return Root[$"{Env}:{ConfigCommon.ConnectionStringsName}"];
     }
     
-    public static List<DbConfigPath> GetDbConfigPathList()
+    public static List<DbConfigBean> GetDbConfigBeanList()
     {
-        return Root.GetSection(ConfigCommon.ReadDbConfigPathsName).Get<List<DbConfigPath>>();
+        return Root.GetSection(ConfigCommon.ReadDbConfigPathsName).Get<List<DbConfigBean>>();
     }
 }
