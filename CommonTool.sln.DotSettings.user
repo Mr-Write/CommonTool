@@ -13,13 +13,20 @@
     &lt;TestId&gt;NUnit3x::9732C3D7-E0F6-4927-9690-DCBE11039906::net8.0::SqlInfoGen.Cons.Test.SimpleTest.TestGetTableSchema&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6ffe1b44_002Deb86_002D41af_002D9b3e_002D6ab929ce6e82/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestDbConn" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6ffe1b44_002Deb86_002D41af_002D9b3e_002D6ab929ce6e82/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TestDbConn" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::9732C3D7-E0F6-4927-9690-DCBE11039906::net8.0::SqlInfoGen.Cons.Test.SimpleTest.TestDbConn&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::9732C3D7-E0F6-4927-9690-DCBE11039906::net8.0::SqlInfoGen.Cons.Test.SimpleTest.TestReadJsonObj&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::9732C3D7-E0F6-4927-9690-DCBE11039906::net8.0::SqlInfoGen.Cons.Test.SimpleTest.TestGetTableSchema&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::9732C3D7-E0F6-4927-9690-DCBE11039906::net8.0::SqlInfoGen.Cons.Test.GenDataFileTest.TestGenDataFile&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=750e1843_002Dcaf6_002D4fd7_002Db4d4_002D12fc06d4c555/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TestDbConn #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=74620fa7_002D3679_002D46b2_002Dba75_002Df83b3766f37e/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestGenDataFile" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::9732C3D7-E0F6-4927-9690-DCBE11039906::net8.0::SqlInfoGen.Cons.Test.GenDataFileTest.TestGenDataFile&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=750e1843_002Dcaf6_002D4fd7_002Db4d4_002D12fc06d4c555/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestDbConn #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::9732C3D7-E0F6-4927-9690-DCBE11039906::net8.0::SqlInfoGen.Cons.Test.SimpleTest.TestDbConn&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::9732C3D7-E0F6-4927-9690-DCBE11039906::net8.0::SqlInfoGen.Cons.Test.SimpleTest.TestReadJsonObj&lt;/TestId&gt;&#xD;

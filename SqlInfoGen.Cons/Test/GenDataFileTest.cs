@@ -67,18 +67,18 @@ public class GenDataFileTest : DbTest
                 var dataTable = DbHelper.GetDataTable(sql);
 
                 // 生成该表的内容
-                var tableCxt = GenFileContent(dbBean, tableBean, dataTable);
+                var tableCxt = GenFileContent(dbBean, tableBean, dataTable, tableFieldInfos);
                 await writer.WriteAsync(tableCxt);
             }
         }
     }
 
-    private static string GenFileContent(DbConfigBean dbBean, TableConfigBean tableBean, DataTable dataTable)
+    private static string GenFileContent(DbConfigBean dbBean, TableConfigBean tableBean, DataTable dataTable, Dictionary<string, TableFieldInfo> tableFieldInfos)
     {
         switch (dbBean.OutputFileNameSuffixEnum)
         {
             case FileSuffixEnum.Md:
-                return MarkdownGenUtil.GenMarkdown(tableBean, dataTable);
+                return MarkdownGenUtil.GenMarkdown(tableBean, dataTable,tableFieldInfos);
             default:
                 return string.Empty;
         }

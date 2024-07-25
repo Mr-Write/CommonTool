@@ -23,5 +23,29 @@
       "Offset": 0,
       "Count": 10
     }
+  },
+  {
+    "Table": "expert_task",
+    "NeedAllFields": false,
+    "Fields": [
+      {"Name": "Id", "Alias": "主键"},
+      {"Name": "Name", "Alias": "任务名称"},
+      {"Name": "OwnerCode", "Alias": "创建人"},
+      {"Name": "IsExpert", "Alias": "是否为督导"},
+      {"Name": "EvalMode", "Alias": "评价粒度"},
+      {"Name": "IsDepartmentShowResult"},
+      {"Name": "IsDepartmentShowEvaluator"}
+    ],
+    "NeedTableSchema": true,
+    "SelectConditions": [
+      
+    ],
+    "OrderByConditions": [
+      
+    ],
+    "Limit": {
+      "Offset": 0,
+      "Count": 10
+    }
   }
 ]

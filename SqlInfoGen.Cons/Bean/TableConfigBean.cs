@@ -29,5 +29,5 @@ public class Limit
     /// <summary>
     /// 获取数量
     /// </summary>
-    public int Count { get; set; } = 1024;
+    public int Count { get; set; } = 10;
 }
