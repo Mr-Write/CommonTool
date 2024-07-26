@@ -1,12 +1,5 @@
 {
-  "env": "prod",
-  "dev": {
-    "connectionStrings": "server=127.0.0.1;uid=root;pwd=123456;database=newjpconfigdb;pooling=true;AllowLoadLocalInfile=true;"
-  },
-  "prod": {
-    "connectionStrings": "server=192.168.0.203;uid=xietian;pwd=Sangxin_59;database=pxk_wsyu_2023_2024_2;pooling=true;AllowLoadLocalInfile=true;"
-  },
-  "readDbConfigPaths": [
+  "ReadDbConfigPaths": [
     {
       "ReadDirLevels": [
         "DbConfig"
@@ -14,7 +7,18 @@
       "ReadFileName": "business_db.json",
       "OutputDir": "default",
       "OutputFileName": "default",
-      "OutputFileNameSuffix": "default"
+      "OutputFileNameSuffix": "default",
+      "ConnectionString": "server=192.168.0.203;uid=xietian;pwd=Sangxin_59;database=pxk_wsyu_2023_2024_2;pooling=true;AllowLoadLocalInfile=true;"
+    },
+    {
+      "ReadDirLevels": [
+        "DbConfig"
+      ],
+      "ReadFileName": "newjpconfigdb.json",
+      "OutputDir": "default",
+      "OutputFileName": "default",
+      "OutputFileNameSuffix": "default",
+      "ConnectionString": "server=192.168.0.203;uid=xietian;pwd=Sangxin_59;database=newjpconfigdb;pooling=true;AllowLoadLocalInfile=true;"
     }
   ]
 }

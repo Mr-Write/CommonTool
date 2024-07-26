@@ -29,12 +29,14 @@ public class GenDataFileTest : DbTest
                 Console.WriteLine($"{dbBean.ReadFilePath} 中存在错误信息: {dbErrorInfo}");
                 continue;
             }
+
             var tableBeans = JsonToObjUtils.GetTableConfigBeanList<TableConfigBean>(dbBean.ReadFilePath);
             // 检查输出目录是否存在
             if (!Directory.Exists(dbBean.OutputDir))
             {
                 Directory.CreateDirectory(dbBean.OutputDir);
             }
+
             // 输出流
             await using var writer = new StreamWriter(dbBean.OutputFilePath);
             foreach (var tableBean in tableBeans)
@@ -42,7 +44,7 @@ public class GenDataFileTest : DbTest
                 Console.WriteLine(JsonSerializer.Serialize(tableBean));
 
                 // 获取表结构数据
-                var tableFieldInfos = DbHelper.GetTableSchema(tableBean.Table);
+                var tableFieldInfos = DbHelper.GetTableSchema(tableBean.Table, dbBean.ConnectionString);
                 // 检查是否遵循规则
                 var errorInfo = CheckTableFollowRule(tableBean, tableFieldInfos);
                 if (errorInfo is not null)
@@ -66,7 +68,7 @@ public class GenDataFileTest : DbTest
                 var sql = GenSql(tableBean);
 
                 // 执行 sql
-                var dataTable = DbHelper.GetDataTable(sql);
+                var dataTable = DbHelper.GetDataTable(sql, dbBean.ConnectionString);
 
                 // 生成该表的内容
                 var tableCxt = GenFileContent(dbBean, tableBean, dataTable, tableFieldInfos);
@@ -75,12 +77,13 @@ public class GenDataFileTest : DbTest
         }
     }
 
-    private static string GenFileContent(DbConfigBean dbBean, TableConfigBean tableBean, DataTable dataTable, Dictionary<string, TableFieldInfo> tableFieldInfos)
+    private static string GenFileContent(DbConfigBean dbBean, TableConfigBean tableBean, DataTable dataTable,
+        Dictionary<string, TableFieldInfo> tableFieldInfos)
     {
         switch (dbBean.OutputFileNameSuffixEnum)
         {
             case FileSuffixEnum.Md:
-                return MarkdownGenUtils.GenMarkdown(tableBean, dataTable,tableFieldInfos);
+                return MarkdownGenUtils.GenMarkdown(tableBean, dataTable, tableFieldInfos);
             default:
                 return string.Empty;
         }
@@ -117,7 +120,7 @@ public class GenDataFileTest : DbTest
         var builder = new StringBuilder();
         builder.Append("select ");
         // 配置查询的字段
-        builder.Append(string.Join(",", bean.Fields!.Select(f=>f.Name)));
+        builder.Append(string.Join(",", bean.Fields!.Select(f => f.Name)));
         // 配置查询的表
         builder.Append($" from {bean.Table} ");
         // 配置查询条件

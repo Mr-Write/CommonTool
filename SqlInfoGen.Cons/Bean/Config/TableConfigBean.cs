@@ -8,7 +8,7 @@ public class TableConfigBean
     public bool NeedTableSchema { get; set; } = true;
     public List<string>? SelectConditions { get; set; }
     public List<string>? OrderByConditions { get; set; }
-    public Limit Limit { get; set; }
+    public Limit Limit { get; set; } = new();
 }
 
 public class Field

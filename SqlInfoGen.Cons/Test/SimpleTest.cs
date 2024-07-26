@@ -40,13 +40,4 @@ public class SimpleTest : DbTest
         }
     }
 
-    [Test]
-    public void TestGetTableSchema()
-    {
-        var tableFieldInfos = DbHelper.GetTableSchema("universitybaseinfo");
-        foreach (var tableFieldInfo in tableFieldInfos.Values)
-        {
-            Console.WriteLine($"{tableFieldInfo.Field} {tableFieldInfo.Type} {tableFieldInfo.Comment}");
-        }
-    }
 }

@@ -15,19 +15,19 @@ public abstract class DbTest
     [SetUp]
     public void Setup()
     {
-        Db = new SqlSugarClient(new ConnectionConfig
-            {
-                DbType = DbType.MySql,
-                ConnectionString = ConfigUtils.GetMySqlConnectionString(),
-                IsAutoCloseConnection = true
-            },
-            db =>
-            {
-                db.Aop.OnLogExecuting = (sql, pars) =>
-                {
-                    // 获取无参数化 SQL，对性能有影响，特别大的 SQL 参数多的，调试使用
-                    Console.WriteLine(UtilMethods.GetSqlString(DbType.MySql, sql, pars));
-                };
-            });
+        // Db = new SqlSugarClient(new ConnectionConfig
+        //     {
+        //         DbType = DbType.MySql,
+        //         ConnectionString = ConfigUtils.GetMySqlConnectionString(),
+        //         IsAutoCloseConnection = true
+        //     },
+        //     db =>
+        //     {
+        //         db.Aop.OnLogExecuting = (sql, pars) =>
+        //         {
+        //             // 获取无参数化 SQL，对性能有影响，特别大的 SQL 参数多的，调试使用
+        //             Console.WriteLine(UtilMethods.GetSqlString(DbType.MySql, sql, pars));
+        //         };
+        //     });
     }
 }

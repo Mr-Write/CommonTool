@@ -1,0 +1,54 @@
+[
+  {
+    "Table": "deep_diagnosis_report_config",
+    "NeedAllFields": false,
+    "Fields": [
+      {"Name": "Id", "Alias": "配置Id"},
+      {"Name": "UniversityCode", "Alias": ""},
+      {"Name": "Name", "Alias": ""},
+      {"Name": "ReportScope", "Alias": ""},
+      {"Name": "DepartmentType"}
+    ],
+    "NeedTableSchema": true,
+    "SelectConditions": [
+      "Id & 1 = 1"
+    ],
+    "OrderByConditions": [
+      "Id desc"
+    ],
+    "Limit": {
+      "Offset": 0,
+      "Count": 10
+    }
+  },
+  {
+    "Table": "deep_diagnosis_report_outline",
+    "NeedAllFields": false,
+    "Fields": [
+      {"Name": "Id", "Alias": "主键"},
+      {"Name": "Name", "Alias": "目录/指标名称"},
+      {"Name": "Code", "Alias": "编码"},
+      {"Name": "ParentCode", "Alias": "父级编码"}
+    ],
+    "NeedTableSchema": true,
+    "SelectConditions": [
+
+    ],
+    "OrderByConditions": [
+
+    ],
+    "Limit": {
+      "Offset": 0,
+      "Count": 6
+    }
+  },
+  {
+    "Table": "upgradelog",
+    "NeedAllFields": true,
+    "Fields": [
+      {"Name": "Id", "Alias": "主键"},
+      {"Name": "Version", "Alias": "v"}
+    ],
+    "NeedTableSchema": false
+  }
+]

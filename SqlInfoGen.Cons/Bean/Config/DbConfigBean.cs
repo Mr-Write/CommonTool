@@ -13,7 +13,9 @@ public class DbConfigBean
     public string OutputFileName { get; set; } = "default";
     public string OutputFileNameSuffix { get; set; } = "default";
     public FileSuffixEnum OutputFileNameSuffixEnum { get; set; }
-    
+
     public string ReadFilePath;
     public string OutputFilePath;
+
+    public string ConnectionString { get; set; }
 }

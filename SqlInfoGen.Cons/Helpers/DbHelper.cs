@@ -11,11 +11,10 @@ namespace SqlInfoGen.Cons.Helpers;
 
 public static class DbHelper
 {
-    private static readonly string? ConnectionString;
 
     static DbHelper()
     {
-        ConnectionString = ConfigUtils.GetMySqlConnectionString();
+        
     }
 
     private static MySqlCommand PrepareCommand(MySqlConnection conn, string sql, CommandType cmdType,
@@ -34,28 +33,28 @@ public static class DbHelper
     /**
      * 执行增删改的操作
      */
-    public static int ExecuteNonQuery(string sql, CommandType cmdType =
+    public static int ExecuteNonQuery(string sql, string connectionString, CommandType cmdType =
         CommandType.Text, params MySqlParameter[]? parameters)
     {
-        using var conn = new MySqlConnection(ConnectionString);
+        using var conn = new MySqlConnection(connectionString);
         conn.Open();
         using var cmd = PrepareCommand(conn, sql, cmdType, parameters);
         return cmd.ExecuteNonQuery();
     }
 
-    public static object? ExecuteScalar(string sql, CommandType cmdType =
+    public static object? ExecuteScalar(string sql, string connectionString, CommandType cmdType =
         CommandType.Text, params MySqlParameter[]? parameters)
     {
-        using var conn = new MySqlConnection(ConnectionString);
+        using var conn = new MySqlConnection(connectionString);
         conn.Open();
         using var cmd = PrepareCommand(conn, sql, cmdType, parameters);
         return cmd.ExecuteScalar();
     }
 
-    public static DataTable GetDataTable(string sql, CommandType cmdType =
+    public static DataTable GetDataTable(string sql, string connectionString, CommandType cmdType =
         CommandType.Text, params MySqlParameter[]? parameters)
     {
-        using MySqlDataAdapter adapter = new(sql, new MySqlConnection(ConnectionString));
+        using MySqlDataAdapter adapter = new(sql, new MySqlConnection(connectionString));
         adapter.SelectCommand!.CommandType = cmdType;
         if (parameters is { Length: > 0 })
         {
@@ -67,10 +66,10 @@ public static class DbHelper
         return dataTable;
     }
 
-    public static Dictionary<string, TableFieldInfo> GetTableSchema(string tableName)
+    public static Dictionary<string, TableFieldInfo> GetTableSchema(string tableName, string connectionString)
     {
         string sql = $"SHOW FULL COLUMNS FROM {tableName}";
-        var dataTable = GetDataTable(sql);
+        var dataTable = GetDataTable(sql, connectionString);
         var dict = new Dictionary<string, TableFieldInfo>();
         int order = 0;
         foreach (DataRow row in dataTable.Rows)
@@ -80,7 +79,7 @@ public static class DbHelper
             {
                 Field = field,
                 Type = row["Type"].ToString()!,
-                Comment = row["Comment"].ToString(),
+                Comment = row["Comment"].ToString()!,
                 Order = order++
             });
         }
