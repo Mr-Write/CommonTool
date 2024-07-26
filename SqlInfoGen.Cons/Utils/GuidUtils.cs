@@ -1,6 +1,6 @@
 ﻿namespace SqlInfoGen.Cons.Utils;
 
-public static class GuidUtil
+public static class GuidUtils
 {
     public static string GetGuid()
     {

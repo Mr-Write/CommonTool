@@ -1,6 +1,6 @@
 ﻿namespace SqlInfoGen.Cons.Utils;
 
-public static class EnvUtil
+public static class EnvUtils
 {
     /// <summary>
     /// 获取当前工作目录

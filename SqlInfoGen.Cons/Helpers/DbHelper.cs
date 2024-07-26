@@ -4,6 +4,7 @@ using Microsoft.Data.SqlClient.Server;
 using Microsoft.Extensions.Configuration;
 using MySqlConnector;
 using SqlInfoGen.Cons.Bean;
+using SqlInfoGen.Cons.Bean.Config;
 using SqlInfoGen.Cons.Utils;
 
 namespace SqlInfoGen.Cons.Helpers;
@@ -14,7 +15,7 @@ public static class DbHelper
 
     static DbHelper()
     {
-        ConnectionString = ConfigUtil.GetMySqlConnectionString();
+        ConnectionString = ConfigUtils.GetMySqlConnectionString();
     }
 
     private static MySqlCommand PrepareCommand(MySqlConnection conn, string sql, CommandType cmdType,

@@ -1,18 +1,19 @@
 ﻿using Microsoft.Extensions.Configuration;
 using SqlInfoGen.Cons.Bean;
+using SqlInfoGen.Cons.Bean.Config;
 using SqlInfoGen.Cons.Common;
 
 namespace SqlInfoGen.Cons.Utils;
 
-public static class ConfigUtil
+public static class ConfigUtils
 {
     private static readonly IConfigurationRoot Root;
     private static readonly string Env;
 
-    static ConfigUtil()
+    static ConfigUtils()
     {
         var builder = new ConfigurationBuilder();
-        builder.AddJsonFile($"{EnvUtil.GetCurrentWorkDirectory()}{ConfigCommon.ConfigFileName}", true, true);
+        builder.AddJsonFile($"{EnvUtils.GetCurrentWorkDirectory()}{ConfigCommon.ConfigFileName}", true, true);
         Root = builder.Build();
         Env = Root[ConfigCommon.EnvName];
     }

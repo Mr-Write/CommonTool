@@ -18,7 +18,7 @@ public abstract class DbTest
         Db = new SqlSugarClient(new ConnectionConfig
             {
                 DbType = DbType.MySql,
-                ConnectionString = ConfigUtil.GetMySqlConnectionString(),
+                ConnectionString = ConfigUtils.GetMySqlConnectionString(),
                 IsAutoCloseConnection = true
             },
             db =>

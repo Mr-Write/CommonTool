@@ -3,10 +3,12 @@ using System.Text;
 using System.Text.Json;
 using NUnit.Framework;
 using SqlInfoGen.Cons.Bean;
+using SqlInfoGen.Cons.Bean.Config;
 using SqlInfoGen.Cons.Common;
 using SqlInfoGen.Cons.Enums;
 using SqlInfoGen.Cons.Helpers;
 using SqlInfoGen.Cons.Utils;
+using SqlInfoGen.Cons.Utils.ViewGen;
 
 namespace SqlInfoGen.Cons.Test;
 
@@ -15,7 +17,7 @@ public class GenDataFileTest : DbTest
     [Test]
     public async Task TestGenDataFile()
     {
-        var dbBeans = ConfigUtil.GetDbConfigBeanList();
+        var dbBeans = ConfigUtils.GetDbConfigBeanList();
         foreach (var dbBean in dbBeans)
         {
             // 配置输出文件信息
@@ -27,7 +29,7 @@ public class GenDataFileTest : DbTest
                 Console.WriteLine($"{dbBean.ReadFilePath} 中存在错误信息: {dbErrorInfo}");
                 continue;
             }
-            var tableBeans = JsonToObjUtil.GetTableConfigBeanList(dbBean.ReadFilePath);
+            var tableBeans = JsonToObjUtils.GetTableConfigBeanList<TableConfigBean>(dbBean.ReadFilePath);
             // 检查输出目录是否存在
             if (!Directory.Exists(dbBean.OutputDir))
             {
@@ -78,7 +80,7 @@ public class GenDataFileTest : DbTest
         switch (dbBean.OutputFileNameSuffixEnum)
         {
             case FileSuffixEnum.Md:
-                return MarkdownGenUtil.GenMarkdown(tableBean, dataTable,tableFieldInfos);
+                return MarkdownGenUtils.GenMarkdown(tableBean, dataTable,tableFieldInfos);
             default:
                 return string.Empty;
         }

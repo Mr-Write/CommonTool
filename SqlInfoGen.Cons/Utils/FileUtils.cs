@@ -2,6 +2,6 @@
 
 namespace SqlInfoGen.Cons.Utils;
 
-public static class FileUtil
+public static class FileUtils
 {
 }

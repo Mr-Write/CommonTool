@@ -1,6 +1,4 @@
-﻿using SqlInfoGen.Cons.Enums;
-
-namespace SqlInfoGen.Cons.Bean;
+﻿namespace SqlInfoGen.Cons.Bean.Config;
 
 public class TableConfigBean
 {

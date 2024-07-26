@@ -14,7 +14,8 @@
     ],
     "NeedTableSchema": true,
     "SelectConditions": [
-      "TaskId = 11"
+      "TaskId = 11",
+      "Id > 0"
     ],
     "OrderByConditions": [
       "Id asc"
