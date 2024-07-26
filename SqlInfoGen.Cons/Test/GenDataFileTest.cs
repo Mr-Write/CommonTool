@@ -18,13 +18,15 @@ public class GenDataFileTest : DbTest
     public async Task TestGenDataFile()
     {
         var dbBeans = ConfigUtils.GetDbConfigBeanList();
+
+        // 一个文件对应一份数据库，包含了多个表的数据与结构
         foreach (var dbBean in dbBeans)
         {
             // 配置输出文件信息
             SetDbFileInfo(dbBean);
             // 检查是否遵循规范
-            var dbErrorInfo = CheckOutputFileFollowRule(dbBean);
-            if (dbErrorInfo is not null)
+            var dbErrorInfo = CheckDbFollowRule(dbBean);
+            if (!string.IsNullOrWhiteSpace(dbErrorInfo))
             {
                 Console.WriteLine($"{dbBean.ReadFilePath} 中存在错误信息: {dbErrorInfo}");
                 continue;
@@ -46,10 +48,10 @@ public class GenDataFileTest : DbTest
                 // 获取表结构数据
                 var tableFieldInfos = DbHelper.GetTableSchema(tableBean.Table, dbBean.ConnectionString);
                 // 检查是否遵循规则
-                var errorInfo = CheckTableFollowRule(tableBean, tableFieldInfos);
-                if (errorInfo is not null)
+                var tableErrorInfo = CheckTableFollowRule(tableBean, tableFieldInfos);
+                if (!string.IsNullOrWhiteSpace(tableErrorInfo))
                 {
-                    Console.WriteLine($"{dbBean.ReadFilePath} 中存在错误信息: {errorInfo}");
+                    Console.WriteLine($"{dbBean.ReadFilePath} 中存在错误信息: {tableErrorInfo}");
                     continue;
                 }
 
@@ -96,9 +98,6 @@ public class GenDataFileTest : DbTest
             dbBean.OutputDir = ConfigCommon.DefaultOutputDir;
         }
 
-        int index = dbBean.ReadFileName.LastIndexOf(".", StringComparison.Ordinal);
-        // 设置 db 名称为文件名
-        dbBean.Db = index == -1 ? dbBean.ReadFileName : dbBean.ReadFileName.Substring(0, index);
         if (dbBean.OutputFileName == ConfigCommon.DefaultName || string.IsNullOrWhiteSpace(dbBean.OutputFileName))
         {
             dbBean.OutputFileName = $"{ConfigCommon.DefaultOutputFileNamePrefix}{dbBean.Db}";
@@ -146,8 +145,14 @@ public class GenDataFileTest : DbTest
     /// 检查输出文件配置是否正确
     /// </summary>
     /// <returns></returns>
-    private static string? CheckOutputFileFollowRule(DbConfigBean bean)
+    private static string? CheckDbFollowRule(DbConfigBean bean)
     {
+        // 检查连接字符串是否进行配置
+        if (string.IsNullOrWhiteSpace(bean.ConnectionString))
+        {
+            return "未正确配置参数 ConnectionString";
+        }
+
         // 检查文件后缀是否提供支持
         var enumByDescription = EnumExtensions.ParseEnumByDescription<FileSuffixEnum>(bean.OutputFileNameSuffix);
         if (enumByDescription == null)
