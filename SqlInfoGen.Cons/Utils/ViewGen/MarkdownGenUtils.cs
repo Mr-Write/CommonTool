@@ -32,7 +32,7 @@ public static class MarkdownGenUtils
         // 生成 data 的 markdown 表格
         list.Add(new MdTable()
         {
-            Heads = tableBean.Fields!
+            Head = tableBean.Fields!
                 .Select(f => $"{f.Name}{(string.IsNullOrWhiteSpace(f.Alias) ? "" : $"({f.Alias})")}").ToList(),
             Rows = dataTable.Rows.Cast<DataRow>()
                 .Select(r => tableBean.Fields!.Select(f => Convert.ToString(r[f.Name]) ?? Null).ToList()).ToList()
@@ -45,7 +45,7 @@ public static class MarkdownGenUtils
             list.Add(new MdH2("结构"));
             list.Add(new MdTable()
             {
-                Heads = ["Field", "Type", "Comment"],
+                Head = ["Field", "Type", "Comment"],
                 Rows = tableBean.Fields!.Select(f =>
                 {
                     var fieldInfo = tableFieldInfos[f.Name];
@@ -80,12 +80,12 @@ public static class MarkdownGenUtils
     private static string ReaderTable(MdTable table)
     {
         // 检测 table 正确性
-        if (table.Heads == null || table.Heads.Count == 0)
+        if (table.Head == null || table.Head.Count == 0)
         {
             throw new MdTableFormatException("table 无表头格式");
         }
 
-        if (table.Rows != null && table.Rows.Any(r => r.Count != table.Heads.Count))
+        if (table.Rows != null && table.Rows.Any(r => r.Count != table.Head.Count))
         {
             throw new MdTableFormatException("table 表头与普通行列数不一致");
         }
@@ -93,7 +93,7 @@ public static class MarkdownGenUtils
         var tableBuilder = new StringBuilder();
 
         // 生成表头
-        tableBuilder.Append(InitTableHead(table.Heads));
+        tableBuilder.Append(InitTableHead(table.Head));
         // 生成表格内容
         if (table.Rows != null)
         {

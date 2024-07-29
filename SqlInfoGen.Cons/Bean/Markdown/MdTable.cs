@@ -10,7 +10,7 @@ public sealed class MdTable : MdStruct
     /// <summary>
     /// 表头
     /// </summary>
-    public List<string> Heads { get; set; }
+    public List<string> Head { get; set; }
 
     /// <summary>
     /// 行数据

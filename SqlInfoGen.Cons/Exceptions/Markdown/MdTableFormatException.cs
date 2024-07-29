@@ -6,7 +6,7 @@ public class MdTableFormatException:Exception
     {
     }
 
-    public MdTableFormatException(string message) : base(message)
+    public MdTableFormatException(string message = "md 表格格式化错误") : base(message)
     {
     }
 
