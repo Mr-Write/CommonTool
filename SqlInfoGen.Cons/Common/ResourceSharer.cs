@@ -10,8 +10,7 @@ public static class ResourceSharer
     /// </para>
     /// </remarks>
     /// </summary>
-    // private static readonly SemaphoreSlim FileGenLimiter = new(Environment.ProcessorCount >> 1, Environment.ProcessorCount);
-    private static readonly SemaphoreSlim FileGenLimiter = new(1, 1);
+    private static readonly SemaphoreSlim FileGenLimiter = new(Environment.ProcessorCount >> 1, Environment.ProcessorCount);
 
     public static async Task FileHandleWithResourceControlAsync(Func<Task> task)
     {
